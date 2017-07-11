@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "compile:scss": "sass --watch src/scss/index.scss:src/css/index.css"
+    "bundle": "node_modules/.bin/webpack",
+    "compile:scss": "sass --watch src/scss/index.scss:build/css/index.css",
+    "mocha": "node_modules/.bin/mocha build/javascript/test/",
+    "test": "tsc && npm run mocha"
   },
   "repository": {
     "type": "git",
@@ -18,8 +20,15 @@
   },
   "homepage": "https://github.com/NVocke/ts_playground#readme",
   "devDependencies": {
+    "@types/chai": "^4.0.1",
+    "@types/jquery": "^3.2.6",
+    "@types/mocha": "^2.2.41",
+    "@types/node": "^8.0.10",
+    "@types/webpack": "^3.0.4",
+    "chai": "^4.0.2",
     "jquery": "^3.2.1",
-    "typescript": "^2.3.4",
+    "mocha": "^3.4.2",
+    "typescript": "^2.4.1",
     "webpack": "^2.6.1"
   }
 }
